@@ -1,4 +1,5 @@
-import time, urllib, urllib2
+import time, urllib
+from urllib.request import urlopen
 
 try:
     import simplejson as json
@@ -22,7 +23,7 @@ def _api(url, id, pagination=None):
     else:
         query = ''
 
-    u = urllib2.urlopen(API_URL + (url % id) + query)
+    u = urlopen(API_URL + (url % id) + query)
     return json.loads(u.read())
 
 
