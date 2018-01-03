@@ -1,5 +1,6 @@
 import time, urllib
 from urllib.request import urlopen
+from urllib.parse import urlencode
 
 try:
     import simplejson as json
@@ -19,7 +20,7 @@ def _api(url, id, pagination=None):
         _calls.append(time.time())
 
     if pagination:
-        query = '?' + urllib.urlencode(zip(('page', 'per_page'), pagination))
+        query = '?' + urlencode(zip(('page', 'per_page'), pagination))
     else:
         query = ''
 
