@@ -4,7 +4,7 @@ from setuptools import setup, find_packages
 install_requires = []
 try:
     import json
-except ImportError, e:
+except ImportError as e:
     install_requires.append('simplejson')
 
 README_PATH = os.path.join(os.path.abspath(os.path.dirname(__file__)), 'README.markdown')
