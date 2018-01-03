@@ -20,7 +20,7 @@ def _api(url, id, pagination=None):
         _calls.append(time.time())
 
     if pagination:
-        query = '?' + urlencode(zip(('page', 'per_page'), pagination))
+        query = '?' + urlencode(list(zip(('page', 'per_page'), pagination)))
     else:
         query = ''
 
